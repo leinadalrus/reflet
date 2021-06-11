@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=F:\Users\Amstel\Documents\GitHub\reflet\alakkazam\target\debug\build\typenum-0c06af3beab2e646\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=F:\Users\Amstel\Documents\GitHub\reflet\alakkazam\target\debug\build\typenum-0c06af3beab2e646\out\op.rs

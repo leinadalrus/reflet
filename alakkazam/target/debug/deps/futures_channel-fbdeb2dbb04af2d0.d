@@ -1,0 +1,10 @@
+F:\Users\Amstel\Documents\GitHub\reflet\alakkazam\target\debug\deps\futures_channel-fbdeb2dbb04af2d0.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lock.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\mod.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\queue.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\sink_impl.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\oneshot.rs
+
+F:\Users\Amstel\Documents\GitHub\reflet\alakkazam\target\debug\deps\futures_channel-fbdeb2dbb04af2d0.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lock.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\mod.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\queue.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\sink_impl.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\oneshot.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\lock.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\mod.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\queue.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\mpsc\sink_impl.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-channel-0.3.15\src\oneshot.rs:

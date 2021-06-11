@@ -1,0 +1,1 @@
+{"rustc":3058707760394983085,"features":"[]","target":15037585491824344625,"profile":10033495471373437411,"path":1731848681873110771,"deps":[[17671881657559241013,"winapi",false,3703644044801539921]],"local":[{"CheckDepInfo":{"dep_info":"debug\\.fingerprint\\socket2-034b487741560f19\\dep-lib-socket2"}}],"rustflags":[],"metadata":4369977487368567522,"config":0,"compile_kind":0}
