@@ -1,4 +1,2 @@
 mod cluster_listener;
-mod kubeops_controller;
-mod kubernetes_clustering_observer;
-mod kubectls_rest_reflector;
+mod swarm_handler;
