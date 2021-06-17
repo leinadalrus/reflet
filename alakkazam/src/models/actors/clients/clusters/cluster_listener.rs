@@ -1,8 +1,9 @@
+use alloc::string::String;
 use std::{
 	prelude::v1::*,
 	process::Command,
+	path::Path,
 };
-
 use actix::prelude::*;
 use bollard::{
 	CreateContainerOptions,
@@ -10,43 +11,47 @@ use bollard::{
 	Docker,
 	service::{Body1/*::force_new_cluster*/, ClusterInfo, SwarmInfo/*::cluster*/, SystemInfo/*..::cluster_advertise, ..::cluster_store*/},
 };
+use futures::{StreamExt, TryStreamExt};
+use serde_json::{
+	ser::Formatter,
+	Serializer,
+	value::Value,
+};
 
-struct ConfStdio {
-	stdin_argsv: Vec<String>,
+enum ConfFiletypesE {
+	DOCKERFILE, DOCKER_COMPOSE, SHELLSCRIPT, JSON, YAML,
 }
 
-impl ConfDefmodule for ConfStdio {
-	fn convert() {}
+struct MConfStdio;
 
-	fn parse(stdin: &str) {
-		this(stdin_argsv)
+impl MConfStdio {
+	fn convert() -> serde_json::Serializer {}
+
+	fn parse(stdin: &str) serde_json::Map<alloc::string::String, serde_json::value::Value> {
+		
 	}
 
-	fn argstdin() { // "How do I invoke a system command and capture its output?". Available at: https://stackoverflow.com/a/25574952
-		Command::new("cd --prefix /src \\ |")
-		.arg("./ \\ |")
-		.arg("composedockerfile.sh")
+	fn stdinArgs() { // "How do I invoke a system command and capture its output?". Available at: https://stackoverflow.com/a/25574952
+		let cmd = Command::new("|")
+		.arg("./ \\")
+		.arg("deployment.sh"|"service.sh")
 		.spawn()
-		.expect("Changing directory\
-			then initiating shellscript:\
-			\"composedockerfile.sh\" $=> [<FAILED>].");
+		.expect("deployment.sh"|
+			"service.sh");
 
-		println!("status: {}", output.status);
-		println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
-		println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
+		let mtc = match cmd {
+			Some (patt) if patt == Path::new(".") => {
+				".json" => ConfFiletypesE::JSON,
+				".yaml" => ConfFiletypesE::YAML,
+				".sh" => ConfFiletypesE::SHELLSCRIPT,
+			},
+			"Dockerfile" => ConfFiletypesE::DOCKERFILE,
+			"docker-compose" => ConfFiletypesE::DOCKER_COMPOSE,
+			_ => None,
+		};
 
-		assert!(output.status.success());
+		mtc
 	}
-
-	fn this(self) {
-
-	}
-}
-
-trait ConfDefmodule {
-	fn convert();
-
-	fn parse(stdin: &str);
 }
 
 /** NOTE(Daniel): SwarmInfo, Option<ClusterInfo>
