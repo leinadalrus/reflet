@@ -18,24 +18,31 @@ use serde_json::{
 	value::Value,
 };
 
-struct IConfigFactory<W, F>;
+struct ResourceDocumentConf {
+	keyIdentifier: serde_json::Map<alloc::string::String/*.as_bytes()*/>,
+	resultingValue: serde_json::Map<serde_json::value::Value/*.as_bytes()*/>,
+} // NOTE(Daniel): Data-structure must be able to cascade; become nested-arrays/layer atop another.
 
-impl<W, F> Serializer for IConfigFactory<W, F>
+struct ConfigFactoryI<W, F>;
+
+impl<W, F> Serializer for ConfigFactoryI<W, F>
 	where W: Write,
 			F: Formatter {
-	fn tpl_json(ctx: &str) -> serde_json::Serializer {
+	fn template_json(ctx: &str) -> serde_json::Serializer {
 		let mut thruput_step = Vec::<String>::new();
 
-		for char in ctx.bytes() {
-			let thruput_step = match char {
-				res => serde_json::Map<alloc::string::String>,
-				val => serde_json::Map<serde_json::value::Value>, // NOTE(Daniel): to-rework'n'refactor.
+		for res in ctx/*.bytes()*/ {
+			let thruput_step = match res {
+				res => ResourceDocumentConf {
+					key => ResourceDocumentConf.keyIdentifier,
+					val => ResourceDocumentConf.resultingValue, // NOTE(Daniel): to-rework'n'refactor.
+				},
 				_ => None
 			}
 		}
 	}
 
-	fn conf_container() {
+	fn configure_resource_creation() {
 		Docker::connect_with_http_defaults();
 
 		let ops = Some(CreateContainerOptions {
@@ -44,7 +51,7 @@ impl<W, F> Serializer for IConfigFactory<W, F>
 
 		let conf = Config {
 			image: Some("com.dev.deploy-state"),
-			cmd: Some(vec!["/config/"]),
+			cmd: Some(vec!["/configs/"]),
 			..Default::default()
 		}
 

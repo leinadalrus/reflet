@@ -18,39 +18,17 @@ use serde_json::{
 	value::Value,
 };
 
-enum ConfFiletypesE {
-	DOCKERFILE, DOCKER_COMPOSE, SHELLSCRIPT, JSON, YAML,
-}
+struct ConfStdioM;
 
-struct MConfStdio;
-
-impl MConfStdio {
+impl ConfStdioM {
 	fn convert() -> serde_json::Serializer {}
 
 	fn parse(stdin: &str) serde_json::Map<alloc::string::String, serde_json::value::Value> {
 		
 	}
 
-	fn stdinArgs() { // "How do I invoke a system command and capture its output?". Available at: https://stackoverflow.com/a/25574952
-		let cmd = Command::new("|")
-		.arg("./ \\")
-		.arg("deployment.sh"|"service.sh")
-		.spawn()
-		.expect("deployment.sh"|
-			"service.sh");
+	fn conf_yaml() {
 
-		let mtc = match cmd {
-			Some (patt) if patt == Path::new(".") => {
-				".json" => ConfFiletypesE::JSON,
-				".yaml" => ConfFiletypesE::YAML,
-				".sh" => ConfFiletypesE::SHELLSCRIPT,
-			},
-			"Dockerfile" => ConfFiletypesE::DOCKERFILE,
-			"docker-compose" => ConfFiletypesE::DOCKER_COMPOSE,
-			_ => None,
-		};
-
-		mtc
 	}
 }
 
